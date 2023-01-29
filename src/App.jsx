@@ -1,10 +1,22 @@
 import './App.css'
+import ChatBox from './components/ChatBox'
+import NavBar from './components/NavBar'
+import Welcome from './components/Welcome'
+import { useState } from "react";
 
 function App() {
+  const [user, setUser] = useState(false);
 
   return (
     <div className="App">
-      kdnv
+      <NavBar/>
+      {!user ? (
+        <Welcome/>
+      ) : (
+        <>
+        <ChatBox/>
+        </>
+      )}
     </div>
   )
 }
